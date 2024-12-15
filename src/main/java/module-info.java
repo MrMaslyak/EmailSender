@@ -3,6 +3,7 @@ module org.example.email {
     requires javafx.fxml;
 
     requires org.kordamp.bootstrapfx.core;
+    requires java.mail;
 
     opens org.example.email to javafx.fxml;
     exports org.example.email;
