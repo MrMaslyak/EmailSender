@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<AnchorPane prefHeight="700.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.email.Profile">
+   <children>
+      <Button layoutX="24.0" layoutY="24.0" mnemonicParsing="false" text="Sender" fx:id="sender" onAction="#sender"/>
+      <Button layoutX="224.0" layoutY="397.0" mnemonicParsing="false" text="Save" fx:id="save" />
+      <TextField layoutX="170.0" layoutY="319.0" />
+      <TextField layoutX="170.0" layoutY="239.0" />
+      <Label layoutX="224.0" layoutY="146.0" prefHeight="34.0" prefWidth="53.0" text="Profile">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="170.0" layoutY="291.0" text="App Password" />
+      <Label layoutX="170.0" layoutY="214.0" text="Email" />
+   </children>
+</AnchorPane>
