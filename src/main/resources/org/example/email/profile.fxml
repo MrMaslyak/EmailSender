@@ -4,10 +4,10 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="700.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.email.Profile">
+<AnchorPane prefHeight="700.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.email.controller.Profile">
    <children>
       <Button fx:id="sender" layoutX="24.0" layoutY="24.0" mnemonicParsing="false" onAction="#sender" text="Sender" />
-      <Button fx:id="save" layoutX="224.0" layoutY="389.0" mnemonicParsing="false" text="Save" />
+      <Button fx:id="save" layoutX="224.0" layoutY="389.0" mnemonicParsing="false" onAction="#save" text="Save" />
       <TextField layoutX="170.0" layoutY="319.0" />
       <TextField layoutX="170.0" layoutY="239.0" />
       <Label layoutX="215.0" layoutY="150.0" prefHeight="34.0" prefWidth="60.0" text="Profile">

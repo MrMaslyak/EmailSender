@@ -1,4 +1,4 @@
-package org.example.email;
+package org.example.email.system;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

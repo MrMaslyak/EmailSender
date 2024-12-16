@@ -1,4 +1,4 @@
-package org.example.email;
+package org.example.email.system;
 
 import javax.mail.*;
 import javax.mail.internet.*;

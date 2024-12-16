@@ -1,9 +1,9 @@
-package org.example.email;
+package org.example.email.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import org.example.email.system.StageManager;
 
 public class HelloController {
     @FXML
