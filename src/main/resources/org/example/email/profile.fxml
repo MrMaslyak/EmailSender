@@ -2,14 +2,15 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="700.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.email.controller.Profile">
    <children>
       <Button fx:id="sender" layoutX="24.0" layoutY="24.0" mnemonicParsing="false" onAction="#sender" text="Sender" />
-      <Button fx:id="save" layoutX="224.0" layoutY="389.0" mnemonicParsing="false" onAction="#save" text="Save" />
-      <TextField layoutX="170.0" layoutY="319.0" />
-      <TextField layoutX="170.0" layoutY="239.0" />
+      <Button fx:id="save" layoutX="208.0" layoutY="390.0" mnemonicParsing="false" onAction="#save" text="Save" />
+      <TextField fx:id="password" layoutX="170.0" layoutY="319.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextField fx:id="email" layoutX="170.0" layoutY="239.0" />
       <Label layoutX="215.0" layoutY="150.0" prefHeight="34.0" prefWidth="60.0" text="Profile">
          <font>
             <Font name="System Bold" size="18.0" />
@@ -17,5 +18,6 @@
       </Label>
       <Label layoutX="170.0" layoutY="291.0" text="App Password" />
       <Label layoutX="170.0" layoutY="214.0" text="Email" />
+      <Circle fx:id="validator" fill="DODGERBLUE" layoutX="267.0" layoutY="403.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
    </children>
 </AnchorPane>

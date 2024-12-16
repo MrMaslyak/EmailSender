@@ -1,5 +1,6 @@
 package org.example.email.controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -11,18 +12,20 @@ public class HelloController {
     public TextField title, text,emailTo ;
 
     public void initialize() {
-        send.setOnAction(event -> {
-            String titleText = title.getText();
-            String textText = text.getText();
-            String emailToText = emailTo.getText();
-            System.out.println(titleText);
-            System.out.println(textText);
-            System.out.println(emailToText);
-        });
     }
     @FXML
     protected void onProfileBtnClick() {
         StageManager.switchScene(profileBtn, "/org/example/email/profile.fxml");
     }
 
+
+    public void sendEmail() {
+        String titleText = title.getText();
+        String textText = text.getText();
+        String emailToText = emailTo.getText();
+        if (titleText.isEmpty() || textText.isEmpty() || emailToText.isEmpty()) {
+            System.out.println("Поля не могут быть пустыми");
+            return;
+        }
+    }
 }
