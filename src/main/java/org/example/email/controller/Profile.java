@@ -6,6 +6,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import org.example.email.system.AESUtil;
+import org.example.email.system.EmailSender;
 import org.example.email.system.FileUtil;
 import org.example.email.system.StageManager;
 
@@ -27,7 +28,7 @@ public class Profile {
             String emailText = email.getText();
             String passwordText = password.getText();
             String encryptedPassword = AESUtil.encrypt(passwordText);
-            String validatorEmail = isValidEmailAddress(emailText);
+            String validatorEmail = EmailSender.isValidEmailAddress(emailText);
 
             if (validatorEmail.equals("Invalid email address")) {
                 validator.setFill(Color.RED);
@@ -42,14 +43,5 @@ public class Profile {
         }
     }
 
-    public String isValidEmailAddress(String email) {
-        String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
-        java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
-        java.util.regex.Matcher m = p.matcher(email);
-        if (m.matches()) {
-            return email;
-        } else {
-            return "Invalid email address";
-        }
-    }
+
 }

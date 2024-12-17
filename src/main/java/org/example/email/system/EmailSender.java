@@ -5,14 +5,20 @@ import javax.mail.internet.*;
 import java.util.Properties;
 
 public class EmailSender {
-    String host = "smtp.gmail.com";
-    String port = "587";
-    String username = "maslanyjila@gmail.com";
-    String password = "npgi gakd nbnv bsiq";
+    static String host = "smtp.gmail.com";
+    static String port = "587";
+    static String username;
+   static String password;
 
+    public static void setUsername(String username) {
+        EmailSender.username = username;
+    }
 
+    public static void setPassword(String password) {
+        EmailSender.password = password;
+    }
 
-    public void send(String toEmail, String subject, String message) {
+    public static void send(String toEmail, String subject, String message) {
         Properties props = new Properties();
         props.put("mail.smtp.host", host);
         props.put("mail.smtp.port", port);
@@ -38,6 +44,17 @@ public class EmailSender {
             System.out.println("Письмо успешно отправлено!");
         } catch (MessagingException e) {
             e.printStackTrace();
+        }
+    }
+
+    public static String isValidEmailAddress(String email) {
+        String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
+        java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
+        java.util.regex.Matcher m = p.matcher(email);
+        if (m.matches()) {
+            return email;
+        } else {
+            return "Invalid email address";
         }
     }
 }

@@ -20,7 +20,7 @@ public class FileUtil {
     }
 
 
-    public static String[] readPassword() throws IOException {
+    public static String[] readAll() throws IOException {
         Properties properties = new Properties();
         try (FileInputStream fis = new FileInputStream(FILE_PATH)) {
             properties.load(fis);
@@ -28,5 +28,23 @@ public class FileUtil {
         String email = properties.getProperty("email");
         String password = properties.getProperty("password");
         return new String[]{email, password};
+    }
+
+    public static String readEmail() throws IOException {
+        Properties properties = new Properties();
+        try (FileInputStream fis = new FileInputStream(FILE_PATH)) {
+            properties.load(fis);
+        }
+        String email = properties.getProperty("email");
+        return email;
+    }
+
+    public static String readPassword() throws IOException {
+        Properties properties = new Properties();
+        try (FileInputStream fis = new FileInputStream(FILE_PATH)) {
+            properties.load(fis);
+        }
+        String password = properties.getProperty("password");
+        return password;
     }
 }
