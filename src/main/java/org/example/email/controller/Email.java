@@ -1,17 +1,15 @@
 package org.example.email.controller;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import org.example.email.system.AESUtil;
+import org.example.email.system.Util.AESUtil;
 import org.example.email.system.EmailSender;
-import org.example.email.system.FileUtil;
+import org.example.email.system.Util.FileUtil;
 import org.example.email.system.StageManager;
 
 import java.io.IOException;
-import java.util.Arrays;
 
 public class HelloController {
 
