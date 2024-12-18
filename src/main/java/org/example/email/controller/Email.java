@@ -11,14 +11,15 @@ import org.example.email.system.StageManager;
 
 import java.io.IOException;
 
-public class HelloController {
+public class Email {
 
     @FXML
     private Button send, profileBtn;
-    public TextField title, text,emailTo ;
+    public TextField title, text, emailTo;
     public Label validProfile, error;
 
     public void initialize() throws Exception {
+        EmailSender emailSender = new EmailSender(error);
         error.setVisible(false);
         validProfile.setText("Your email: " + FileUtil.readEmail());
         if (FileUtil.readEmail() != null) {
@@ -26,13 +27,14 @@ public class HelloController {
             EmailSender.setPassword(AESUtil.decrypt(FileUtil.readPassword()));
         }
         if (FileUtil.readEmail() == null) {
-            validProfile.setText("Your email: not found" );
+            validProfile.setText("Your email: not found");
             error.setVisible(true);
             error.setText("Please, enter your email in Profile");
         }
 
 
     }
+
     @FXML
     protected void onProfileBtnClick() {
         StageManager.switchScene(profileBtn, "/org/example/email/profile.fxml");
@@ -43,7 +45,7 @@ public class HelloController {
         String titleText = title.getText();
         String textText = text.getText();
         String emailToText = emailTo.getText();
-        String email =  EmailSender.isValidEmailAddress(emailToText);
+        String email = EmailSender.isValidEmailAddress(emailToText);
         if (email.equals("Invalid email address")) {
             error.setVisible(true);
             error.setText("Invalid email address");
@@ -63,5 +65,6 @@ public class HelloController {
         text.clear();
         title.clear();
     }
+
 
 }

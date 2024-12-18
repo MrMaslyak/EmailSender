@@ -1,4 +1,4 @@
-package org.example.email.system;
+package org.example.email.system.Util;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

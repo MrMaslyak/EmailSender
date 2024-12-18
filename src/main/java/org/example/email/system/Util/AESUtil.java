@@ -1,4 +1,4 @@
-package org.example.email.system;
+package org.example.email.system.Util;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;

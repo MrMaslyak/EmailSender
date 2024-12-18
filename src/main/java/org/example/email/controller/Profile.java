@@ -1,13 +1,12 @@
 package org.example.email.controller;
 
-import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-import org.example.email.system.AESUtil;
+import org.example.email.system.Util.AESUtil;
 import org.example.email.system.EmailSender;
-import org.example.email.system.FileUtil;
+import org.example.email.system.Util.FileUtil;
 import org.example.email.system.StageManager;
 
 public class Profile {
@@ -20,7 +19,7 @@ public class Profile {
     }
 
     public void sender() {
-        StageManager.switchScene(sender, "/org/example/email/hello-view.fxml");
+        StageManager.switchScene(sender, "/org/example/email/emailSender.fxml");
     }
 
     public void save() throws Exception {
@@ -37,7 +36,7 @@ public class Profile {
             FileUtil.savePassword(validatorEmail, encryptedPassword);
             System.out.println("Данные успешно сохранены!");
             validator.setFill(Color.GREEN);
-            StageManager.switchScene(sender, "/org/example/email/hello-view.fxml");
+            StageManager.switchScene(sender, "/org/example/email/emailSender.fxml");
         }catch (Exception e){
             System.out.println("Ошибка при сохранении данных: " + e.getMessage());
         }

@@ -1,7 +1,12 @@
 package org.example.email.system;
 
+import javafx.scene.control.Label;
+import org.example.email.controller.Email;
+
 import javax.mail.*;
 import javax.mail.internet.*;
+import javax.swing.text.LabelView;
+import java.awt.*;
 import java.util.Properties;
 
 public class EmailSender {
@@ -9,6 +14,7 @@ public class EmailSender {
     static String port = "587";
     static String username;
    static String password;
+   public static Label error;
 
     public static void setUsername(String username) {
         EmailSender.username = username;
@@ -42,6 +48,9 @@ public class EmailSender {
 
             Transport.send(msg);
             System.out.println("Письмо успешно отправлено!");
+            error.setText("Email sent successfully");
+            error.setStyle("-fx-text-fill: green");
+            error.setVisible(true);
         } catch (MessagingException e) {
             e.printStackTrace();
         }
@@ -56,5 +65,9 @@ public class EmailSender {
         } else {
             return "Invalid email address";
         }
+    }
+
+    public EmailSender(Label error) {
+        this.error = error;
     }
 }
